@@ -1,0 +1,27 @@
+plugins {
+    id "java"
+    id "application"
+}
+apply plugin : "java"
+apply plugin: 'idea'
+application {
+    mainClassName="Main"
+}
+
+group 'com.eAuction'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+sourceSets.main.java.srcDirs = ['src']
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile "com.sparkjava:spark-core:2.8.0"
+    compile group: 'org.json', name: 'json', version: '20190722'
+    compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.19'
+    compile "org.slf4j:slf4j-api:1.7.25"
+}
+
